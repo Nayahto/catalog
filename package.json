@@ -1,0 +1,19 @@
+{
+  "name": "catalog",
+  "version": "1.0.0",
+  "description": "third project to blue`s second module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nayahto/catalog.git"
+  },
+  "author": "Nayahto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nayahto/catalog/issues"
+  },
+  "homepage": "https://github.com/Nayahto/catalog#readme"
+}
