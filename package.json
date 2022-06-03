@@ -4,7 +4,8 @@
   "description": "third project to blue`s second module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/Nayahto/catalog/issues"
   },
-  "homepage": "https://github.com/Nayahto/catalog#readme"
+  "homepage": "https://github.com/Nayahto/catalog#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16",
+    "path": "^0.12.7"
+  }
 }
