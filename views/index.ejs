@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="/css/index.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,20 +21,28 @@
                 <a href="#">pokedex</a>
                 </nav>
             </aside>
-            <form action="">
+            <form action="/create" method="post">
                 <label for="imagem">imagem</label>
                 <input name="imagem" type="text">
                 <label for="nome">nome</label>
                 <input name="nome" type="text">
                 <label for="lancamento">lancamento</label>
-                <input name="lancamenteo" type="text">
+                <input name="lancamento" type="text">
                 <label for="descricao">descricao</label>
-                <input type="text">
+                <input name="descricao" type="text">
                 <button>enviar</button>
             </form>
-        </article>
-        <article>
-
+        </article >
+       
+        <article id="art_prc" >
+            <%form_dado.forEach((film)=>{ %>
+            <div id="prc">
+            <img src="<%form_dado.imagem%>" alt="teste">
+            <h2><%form_dado.nome%></h2>
+            <p><%form_dado.lancamento%></p>
+            <p><%form_dado.descricao%></p>
+        </div>
+    <%})%>
         </article>
     </section>
     <footer>
