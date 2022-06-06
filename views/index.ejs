@@ -15,34 +15,36 @@
         <article>
             <aside>
                 <nav>
-                <a href="#">cadastro</a>
-                <a href="#">filmes</a>
-                <a href="#">hqs</a>
-                <a href="#">pokedex</a>
+                <a href="/catalogo">catalogo</a>
+                <a href="#">editar</a>
                 </nav>
             </aside>
+            <div id="form_p">
+                <h2>cadastre seu filme aqui</h2>
             <form action="/create" method="post">
                 <label for="imagem">imagem</label>
-                <input name="imagem" type="text">
+                <input name="imagem" required type="text">
                 <label for="nome">nome</label>
-                <input name="nome" type="text">
+                <input name="nome" required type="text">
                 <label for="lancamento">lancamento</label>
-                <input name="lancamento" type="text">
+                <input name="lancamento" rquired type="date">
                 <label for="descricao">descricao</label>
-                <input name="descricao" type="text">
+                <input name="descricao" required type="text">
                 <button>enviar</button>
             </form>
+        </div>
         </article >
        
         <article id="art_prc" >
-            <%form_dado.forEach((film)=>{ %>
-            <div id="prc">
-            <img src="<%form_dado.imagem%>" alt="teste">
-            <h2><%form_dado.nome%></h2>
-            <p><%form_dado.lancamento%></p>
-            <p><%form_dado.descricao%></p>
-        </div>
-    <%})%>
+            <% form_dado.forEach((film) => { %>
+            <a href="#1">
+                <div id="prc">
+                    <img src="<%= film.imagem%>" alt="teste">
+                    <p> Nome: <%= film.nome%></p>
+                    <p>lancamento: <%= film.lancamento%></p>
+                </div>
+            </a>
+    <% }) %>
         </article>
     </section>
     <footer>

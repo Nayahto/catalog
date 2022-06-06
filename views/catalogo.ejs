@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+        body
+        {
+            font-family: "Gill Sans", sans-serif;
+            margin: 0px;
+            padding: 0px;
+            background-color: rgb(45, 43, 43);
+        }
+        #h1
+        {
+            font-size: 2em;
+            color: white;
+            text-align: center;
+            text-decoration: none ;
+        }
+        section
+        {
+            display: flex;
+          justify-content: space-around;
+        }
+        div
+        {
+            border-radius: 6px;
+            margin: 5px;
+            text-align: center;
+            width: 25vw ;
+            color: white;
+            background-color: black;
+        }
+        p
+        {
+            margin: 3px;
+        }
+        img
+        {
+            margin: 5px;
+            width: 15vw ;
+            height: 30vh ;
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+    <a id="h1" href="/"><h1>nayahto</h1></a>
+    </header>   
+    <section>
+        <% form_dado.forEach((nov) => { %>
+            <div>
+                <img src="<%= nov.imagem%>" alt="teste">
+                <p> <strong>Nome: </strong> Nome: <%= nov.nome%></p>
+                <p><strong>lancamento: </strong><%= nov.lancamento%></p>
+              <p><strong>descricao: </strong><%= nov.descricao%></p>
+              <a href="">editar</a>
+              <a href="/delete<%= form_dado.id %>">apagar</a>
+            </div>
+<% }) %>
+    </section>
+</body>
+</html>
