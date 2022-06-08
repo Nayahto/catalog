@@ -5,7 +5,7 @@ const app = express()
 const path = require("path")
 const port = 3000
 
-
+let teste = undefined
 app.set("view engine", "ejs")
 app.use(express.static(path.join(__dirname, "public")))
 app.use(express.urlencoded())
@@ -22,19 +22,27 @@ app.get("/catalogo", (req, res) => {
 res.render("catalogo", {form_dado})
 })
 
+app.get("/detalhes", (req, res) => {
+  res.render("detalhes",{form_dado })
+  })
+
 app.post("/see", (req, res) => {
 const nov = req.body
-film.id = form_dado.length + 1
-form_dado.push(film)
+nov.id = form_dado.length + 1
+form_dado.push(nov)
 })
     
-app.get("/delete", (req, res) => {
+app.get("/delete/:id", (req, res) => {
     const id = +req.params.id - 1; 
     delete form_dado[id];
-    res.redirect("/catalogo");
+    res.redirect("/");
   });
 
-  
+  app.get("/detalhes/:id", (req, res) => {
+    const id_2 = +req.params.id;
+    teste = form_dado.find((batata) => batata.id == id_2);
+    res.redirect("detalhes");
+  })
 app.get("/", (req, res) => {
 res.render("index", {form_dado})
 })
@@ -45,5 +53,7 @@ film.id = form_dado.length + 1
 form_dado.push(film)
 res.redirect('/')
 })
+
+app
 
 app.listen(port)
