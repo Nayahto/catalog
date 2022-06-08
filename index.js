@@ -4,7 +4,7 @@ const express = require("express")
 const { redirect } = require("express/lib/response")
 const app = express()
 const path = require("path")
-const port = 3000
+const port = process.env.PORT || 3000
 // configuracoes ejs e express
 app.set("view engine", "ejs")
 app.use(express.static(path.join(__dirname, "public")))
