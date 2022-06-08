@@ -24,6 +24,7 @@
         }
         div
         {
+            padding: 10px;
             border-radius: 6px;
             margin: 5px;
             text-align: center;
@@ -33,13 +34,21 @@
         }
         p
         {
-            margin: 3px;
+            margin: 5px;
         }
         img
         {
             margin: 5px;
-            width: 15vw ;
-            height: 30vh ;
+            width: 200px ;
+            height: 300px ;
+        }
+        div >a
+        {
+            text-decoration: none;
+            background-color: white;
+            color: black;
+            padding: 5px 10px;
+            margin-top:5px;
         }
 
     </style>
@@ -52,15 +61,14 @@
     <header>
     <a id="h1" href="/"><h1>nayahto</h1></a>
     </header>   
-    <section>
+    <section id="filme">
         <% form_dado.forEach((nov) => { %>
             <div>
                 <img src="<%= nov.imagem%>" alt="teste">
-                <p> <strong>Nome: </strong> Nome: <%= nov.nome%></p>
+                <p> <strong>Nome: </strong><%= nov.nome%></p>
                 <p><strong>lancamento: </strong><%= nov.lancamento%></p>
-              <p><strong>descricao: </strong><%= nov.descricao%></p>
-              <a href="">editar</a>
-              <a href="/delete<%= form_dado.id %>">apagar</a>
+              <p id="para"><strong>descricao: </strong><%= nov.descricao%></p>
+              <a href="/delete/<%= nov.id %>">apagar</a>
             </div>
 <% }) %>
     </section>

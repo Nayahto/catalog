@@ -11,15 +11,21 @@
     <section>
         <header>
             <h1>nayahto</h1>
-        </header>
-        <article>
-            <aside>
                 <nav>
-                <a href="/catalogo">catalogo</a>
-                <a href="#">editar</a>
+                <a href="/catalogo">detalhes</a>
+                <a href="#form_p">cadastro</a>
                 </nav>
-            </aside>
-            <div id="form_p">
+        </header>
+        <article id="art_prc" >
+            <% form_dado.forEach((film) => { %>
+                <div id="prc">
+                    <img src="<%= film.imagem%>" alt="teste">
+                    <p><%= film.nome%></p>
+                </div>
+    <% }) %>
+        </article>
+        <article id="form_p">
+            <div >
                 <h2>cadastre seu filme aqui</h2>
             <form action="/create" method="post">
                 <label for="imagem">imagem</label>
@@ -34,21 +40,17 @@
             </form>
         </div>
         </article >
-       
-        <article id="art_prc" >
-            <% form_dado.forEach((film) => { %>
-            <a href="#1">
-                <div id="prc">
-                    <img src="<%= film.imagem%>" alt="teste">
-                    <p> Nome: <%= film.nome%></p>
-                    <p>lancamento: <%= film.lancamento%></p>
-                </div>
-            </a>
-    <% }) %>
-        </article>
     </section>
     <footer>
 
+        <nav>
+            <a href="https://twitter.com/nayahto">twitter</a>
+            <a href="https://www.instagram.com/nayahto">instagram</a>
+            <a href="https://www.reddit.com/user/Nayahto">reddit</a>
+            <a href="https://www.facebook.com/Nayahto-109136978429906">facebook</a>
+            <a href="">lindekin</a>
+            <a href="https://github.com/Nayahto">github</a>
+        </nav>
     </footer>
 </body>
 </html>
